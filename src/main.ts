@@ -65,7 +65,7 @@ function createQuestionImg (image: string){
 function createAnswerBtns (buttons: string[])  {
   let btnList: HTMLButtonElement[] = []
   for (let i = 0; i < 3; i++) {
-   let answerBtn = document.createElement("btn") as HTMLButtonElement;
+   let answerBtn = document.createElement("button") as HTMLButtonElement;
    answerBtn.id = i.toString()
    answerBtn.innerHTML = buttons[i]
    btnList.push(answerBtn)
