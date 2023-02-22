@@ -92,6 +92,7 @@ function showAnswer(e:any){
   } else{
     
   }
+  createHtmlNextQuestionBtn();
 }
 
 /*------ Right or wrong answer ------*/
@@ -103,7 +104,10 @@ function createHtmlRightAnswer(){
   let text = document.createElement("p");
   text.innerHTML = "Rätt!";
   answerContainer?.appendChild(text);
+}
 
+function createHtmlNextQuestionBtn(){
+  const answerContainer = document.querySelector('.right-or-wrong');
   let nextQuestionBtn = document.createElement('button');
   nextQuestionBtn.innerHTML = "Nästa fråga";
   answerContainer?.appendChild(nextQuestionBtn);
