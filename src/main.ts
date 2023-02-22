@@ -84,38 +84,27 @@ function createAnswerBtns (buttons: string[])  {
 function showAnswer(e:any){
 
   let container = document.querySelector('#questions') as HTMLDivElement;
-    container.classList.add("display-none")
+  container.classList.add("display-none")
+
   if(e.currentTarget.id == currentQuestion.rightAnswer){
-    showRightAnswerPage();
+    createHtmlRightAnswer();
 
   } else{
-    showWrongAnswerPage();
+    
   }
 }
 
-/*-------- Right answer ---------*/
-
-function showRightAnswerPage(){
-  createHtmlRightAnswer();
-}
+/*------ Right or wrong answer ------*/
 
 function createHtmlRightAnswer(){
 
-  const rightContainer = document.querySelector('.right');
-  rightContainer?.classList.add("right-container");
+  const answerContainer = document.querySelector('.right-or-wrong');
+  answerContainer?.classList.add("right-or-wrong-container");
   let text = document.createElement("p");
   text.innerHTML = "Rätt!";
-  rightContainer?.appendChild(text);
+  answerContainer?.appendChild(text);
 
   let nextQuestionBtn = document.createElement('button');
   nextQuestionBtn.innerHTML = "Nästa fråga";
-  rightContainer?.appendChild(nextQuestionBtn);
+  answerContainer?.appendChild(nextQuestionBtn);
 }
-
-function showWrongAnswerPage(){
-  const wrongContainer = document.querySelector('.wrong');
-  wrongContainer?.classList.add("wrong-container");
-  
-}
-
-
