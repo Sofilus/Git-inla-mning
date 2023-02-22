@@ -1,8 +1,6 @@
 import { Question } from './models/questions';
 import './Style/style.css'
 
-
-
 const startQuizBtn = document.querySelector('#startbtn') as HTMLButtonElement;
 
 startQuizBtn?.addEventListener('click', hideFirstpage);
@@ -34,8 +32,12 @@ let questionList: Question[] = [
 let currentQuestion = questionList[0]
 
 function createQuestionHtml (question: Question) {
+  
   currentQuestion = question
+
   let container = document.querySelector('#questions') as HTMLDivElement;
+  container.classList.remove("display-none");
+  container.innerHTML = "";
 
   let questionContainer = createQuestionDivContainer();
   container?.appendChild(questionContainer);
@@ -105,8 +107,12 @@ function showAnswer(e:any){
 
 function createHtmlRightAnswer(){
 
-  const answerContainer = document.querySelector('.right-or-wrong');
+  const answerContainer = document.querySelector('.right-or-wrong') as HTMLDivElement;
+  answerContainer?.classList.remove('display-none');
   answerContainer?.classList.add("right-container");
+
+  answerContainer.innerHTML = "";
+
   let text = document.createElement("p");
   text.innerHTML = "Rätt!";
   answerContainer?.appendChild(text);
@@ -114,16 +120,30 @@ function createHtmlRightAnswer(){
 
 function createHtmlWrongAnswer(){
 
-  const answerContainer = document.querySelector('.right-or-wrong');
+  const answerContainer = document.querySelector('.right-or-wrong') as HTMLDivElement;
+  answerContainer?.classList.remove('display-none');
   answerContainer?.classList.add("wrong-container");
+
+  answerContainer.innerHTML = "";
+
   let text = document.createElement("p");
   text.innerHTML = "Fel!";
   answerContainer?.appendChild(text);
 }
 
 function createHtmlNextQuestionBtn(){
-  const answerContainer = document.querySelector('.right-or-wrong');
+  const answerContainer = document.querySelector('.right-or-wrong') as HTMLDivElement;
   let nextQuestionBtn = document.createElement('button');
   nextQuestionBtn.innerHTML = "Nästa fråga";
   answerContainer?.appendChild(nextQuestionBtn);
+
+  nextQuestionBtn.addEventListener('click', showNextQuestion);
+  console.log(nextQuestionBtn)
 }
+
+function showNextQuestion(){
+  const answerContainer = document.querySelector('.right-or-wrong') as HTMLDivElement;
+  answerContainer?.classList.add("display-none")
+
+  createQuestionHtml(questionList[1]);
+};
