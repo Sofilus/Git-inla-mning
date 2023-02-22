@@ -93,16 +93,24 @@ function showAnswer(e:any){
   }
 }
 
+/*-------- Right answer ---------*/
+
 function showRightAnswerPage(){
+  createHtmlRightAnswer();
+}
+
+function createHtmlRightAnswer(){
   const rightContainer = document.querySelector('.right');
   rightContainer?.classList.add("right-container");
-
+  let text = document.createElement("p");
+  text.innerHTML = "Rätt!";
+  rightContainer?.appendChild(text);
 }
 
 function showWrongAnswerPage(){
   const wrongContainer = document.querySelector('.wrong');
   wrongContainer?.classList.add("wrong-container");
-
+  
 }
 
 
