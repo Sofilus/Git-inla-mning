@@ -90,7 +90,7 @@ function showAnswer(e:any){
     createHtmlRightAnswer();
 
   } else{
-    
+    createHtmlWrongAnswer();
   }
   createHtmlNextQuestionBtn();
 }
@@ -103,6 +103,15 @@ function createHtmlRightAnswer(){
   answerContainer?.classList.add("right-or-wrong-container");
   let text = document.createElement("p");
   text.innerHTML = "Rätt!";
+  answerContainer?.appendChild(text);
+}
+
+function createHtmlWrongAnswer(){
+
+  const answerContainer = document.querySelector('.right-or-wrong');
+  answerContainer?.classList.add("right-or-wrong-container");
+  let text = document.createElement("p");
+  text.innerHTML = "Fel!";
   answerContainer?.appendChild(text);
 }
 
