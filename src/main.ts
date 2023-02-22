@@ -100,11 +100,15 @@ function showRightAnswerPage(){
 }
 
 function createHtmlRightAnswer(){
+  
   const rightContainer = document.querySelector('.right');
   rightContainer?.classList.add("right-container");
   let text = document.createElement("p");
   text.innerHTML = "Rätt!";
   rightContainer?.appendChild(text);
+
+  let nextQuestionBtn = document.createElement('button');
+  rightContainer?.appendChild(nextQuestionBtn);
 }
 
 function showWrongAnswerPage(){
