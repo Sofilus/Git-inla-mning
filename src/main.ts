@@ -100,7 +100,7 @@ function showAnswer(e:any){
 function createHtmlRightAnswer(){
 
   const answerContainer = document.querySelector('.right-or-wrong');
-  answerContainer?.classList.add("right-or-wrong-container");
+  answerContainer?.classList.add("right-container");
   let text = document.createElement("p");
   text.innerHTML = "Rätt!";
   answerContainer?.appendChild(text);
@@ -109,7 +109,7 @@ function createHtmlRightAnswer(){
 function createHtmlWrongAnswer(){
 
   const answerContainer = document.querySelector('.right-or-wrong');
-  answerContainer?.classList.add("right-or-wrong-container");
+  answerContainer?.classList.add("wrong-container");
   let text = document.createElement("p");
   text.innerHTML = "Fel!";
   answerContainer?.appendChild(text);
