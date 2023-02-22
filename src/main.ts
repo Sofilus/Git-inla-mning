@@ -100,7 +100,7 @@ function showRightAnswerPage(){
 }
 
 function createHtmlRightAnswer(){
-  
+
   const rightContainer = document.querySelector('.right');
   rightContainer?.classList.add("right-container");
   let text = document.createElement("p");
@@ -108,6 +108,7 @@ function createHtmlRightAnswer(){
   rightContainer?.appendChild(text);
 
   let nextQuestionBtn = document.createElement('button');
+  nextQuestionBtn.innerHTML = "Nästa fråga";
   rightContainer?.appendChild(nextQuestionBtn);
 }
 
