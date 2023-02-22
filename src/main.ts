@@ -11,7 +11,7 @@ function hideFirstpage () {
   const firstpage = document.querySelector('#firstpage') as HTMLDivElement;
   firstpage.classList.add('display-none');
   
-  createQuestionHtml(questionList[0]);
+  createQuestionHtml(currentQuestion);
 };
 
 /*------- Question page ------------*/
@@ -25,8 +25,10 @@ let questionList: Question[] = [
   }
 ];
 
-function createQuestionHtml (question: Question) {
+let currentQuestion = questionList[0]
 
+function createQuestionHtml (question: Question) {
+  currentQuestion = question
   let container = document.querySelector('#questions') as HTMLDivElement;
 
   let questionContainer = createQuestionDivContainer();
@@ -39,8 +41,9 @@ function createQuestionHtml (question: Question) {
   questionContainer.appendChild(questionImg);
 
   let answerBtns = createAnswerBtns(question.buttons);
-  for(let i = 0; i < 3; i++ )
-  questionContainer.appendChild(answerBtns[i]);
+  for(let i = 0; i < 3; i++ ){
+    questionContainer.appendChild(answerBtns[i]);
+  }
 }
 
 function createQuestionDivContainer () {
@@ -69,7 +72,37 @@ function createAnswerBtns (buttons: string[])  {
    answerBtn.id = i.toString()
    answerBtn.innerHTML = buttons[i]
    btnList.push(answerBtn)
-   
   }
+
+  for (let i = 0; i < btnList.length; i++){
+    btnList[i]?.addEventListener('click', showAnswer)
+  }
+
   return btnList;
 };
+
+function showAnswer(e:any){
+
+  let container = document.querySelector('#questions') as HTMLDivElement;
+    container.classList.add("display-none")
+  if(e.currentTarget.id == currentQuestion.rightAnswer){
+    showRightAnswerPage();
+
+  } else{
+    showWrongAnswerPage();
+  }
+}
+
+function showRightAnswerPage(){
+  const rightContainer = document.querySelector('.right');
+  rightContainer?.classList.add("right-container");
+
+}
+
+function showWrongAnswerPage(){
+  const wrongContainer = document.querySelector('.wrong');
+  wrongContainer?.classList.add("wrong-container");
+
+}
+
+
