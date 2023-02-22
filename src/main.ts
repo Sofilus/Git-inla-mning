@@ -26,7 +26,14 @@ let questionList: Question[] = [
     image: '/Images/german-shepherd.jpg',
     buttons: ["Labrador", "Fransk bulldog", "Schäfer"],
     rightAnswer: 2
+  },
+  {
+    question: "Vilken hundras ser du på bilden?",
+    image: '/Images/Collie.jpg',
+    buttons: ["Collie", "Chodsky pes", "Pudel"],
+    rightAnswer: 0
   }
+
 ];
 
 let currentQuestion = questionList[0]
