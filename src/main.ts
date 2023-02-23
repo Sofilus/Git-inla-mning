@@ -7,6 +7,7 @@ startQuizBtn?.addEventListener('click', hideFirstpage);
 
 function hideFirstpage () {
   const firstpage = document.querySelector('#firstpage') as HTMLDivElement;
+  console.log(firstpage);
   firstpage.classList.add('display-none');
   
   createQuestionHtml(currentQuestion);
