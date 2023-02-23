@@ -1,6 +1,4 @@
 import './Style/style.css'
-<<<<<<< HEAD
-=======
 
 const startQuizBtn = document.querySelector('#startbtn') as HTMLButtonElement;
 
@@ -156,4 +154,3 @@ function showNextQuestion(){
 
   createQuestionHtml(questionList[1]);
 };
->>>>>>> a031657... Cherry-pick
