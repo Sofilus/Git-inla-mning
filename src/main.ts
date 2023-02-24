@@ -1,6 +1,8 @@
 import { Question } from './models/questions';
 import './Style/style.css'
 
+
+
 const startQuizBtn = document.querySelector('#startbtn') as HTMLButtonElement;
 
 startQuizBtn?.addEventListener('click', hideFirstpage);
