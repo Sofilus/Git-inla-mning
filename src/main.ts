@@ -113,7 +113,7 @@ function showAnswer(e:any){
   createHtmlNextQuestionBtn();
 }
 
-/*------ Right or wrong answer ------*/
+/*-------- Right answer ---------*/
 
 function createHtmlRightAnswer(){
 
